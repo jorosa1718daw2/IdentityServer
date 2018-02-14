@@ -1,0 +1,13 @@
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\hostpolicy.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\hostfxr.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.exe
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.deps.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.runtimeconfig.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.runtimeconfig.dev.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\win10-x64\SMECService.pdb
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\win10-x64\SMECService.csproj.CoreCompileInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\win10-x64\SMECService.AssemblyInfoInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\win10-x64\SMECService.AssemblyInfo.cs
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\win10-x64\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\win10-x64\SMECService.pdb

@@ -1,0 +1,20 @@
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\SMECService.deps.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\SMECService.runtimeconfig.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\SMECService.runtimeconfig.dev.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\bin\Release\netcoreapp2.0\SMECService.pdb
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\SMECService.csproj.CoreCompileInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\SMECService.AssemblyInfoInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\SMECService.AssemblyInfo.cs
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService\obj\Release\netcoreapp2.0\SMECService.pdb
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\bin\Release\netcoreapp2.0\SMECService.deps.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\bin\Release\netcoreapp2.0\SMECService.runtimeconfig.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\bin\Release\netcoreapp2.0\SMECService.runtimeconfig.dev.json
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\bin\Release\netcoreapp2.0\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\bin\Release\netcoreapp2.0\SMECService.pdb
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\obj\Release\netcoreapp2.0\SMECService.csproj.CoreCompileInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\obj\Release\netcoreapp2.0\SMECService.AssemblyInfoInputs.cache
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\obj\Release\netcoreapp2.0\SMECService.AssemblyInfo.cs
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\obj\Release\netcoreapp2.0\SMECService.dll
+C:\Users\rbenito\source\repos\NISSAN-ZF\SMECService TEST\obj\Release\netcoreapp2.0\SMECService.pdb
