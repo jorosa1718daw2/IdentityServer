@@ -1,20 +1,21 @@
-/home/sige/Documentos/dotnetcore-angular/SMECService/bin/Debug/netcoreapp2.0/SMECService.deps.json
-/home/sige/Documentos/dotnetcore-angular/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.json
-/home/sige/Documentos/dotnetcore-angular/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.dev.json
-/home/sige/Documentos/dotnetcore-angular/SMECService/bin/Debug/netcoreapp2.0/SMECService.dll
-/home/sige/Documentos/dotnetcore-angular/SMECService/bin/Debug/netcoreapp2.0/SMECService.pdb
-/home/sige/Documentos/dotnetcore-angular/SMECService/obj/Debug/netcoreapp2.0/SMECService.csproj.CoreCompileInputs.cache
-/home/sige/Documentos/dotnetcore-angular/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfoInputs.cache
-/home/sige/Documentos/dotnetcore-angular/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfo.cs
-/home/sige/Documentos/dotnetcore-angular/SMECService/obj/Debug/netcoreapp2.0/SMECService.dll
-/home/sige/Documentos/dotnetcore-angular/SMECService/obj/Debug/netcoreapp2.0/SMECService.pdb
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/bin/Debug/netcoreapp2.0/SMECService.deps.json
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.json
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.dev.json
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/bin/Debug/netcoreapp2.0/SMECService.dll
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/bin/Debug/netcoreapp2.0/SMECService.pdb
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/obj/Debug/netcoreapp2.0/SMECService.csproj.CoreCompileInputs.cache
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfoInputs.cache
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfo.cs
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/obj/Debug/netcoreapp2.0/SMECService.dll
-/home/sige/dotnet-angular/dotnetcore-angular-JRS/SMECService/obj/Debug/netcoreapp2.0/SMECService.pdb
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/bin/Debug/netcoreapp2.0/SMECService.deps.json
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.json
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.dev.json
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/bin/Debug/netcoreapp2.0/SMECService.dll
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/bin/Debug/netcoreapp2.0/SMECService.pdb
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.csproj.CoreCompileInputs.cache
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfoInputs.cache
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfo.cs
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.dll
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.pdb
+C:/Users/rbenito/source/repos/NISSAN-ZF/SMECService/obj/Debug/netcoreapp2.0/SMECService.csprojResolveAssemblyReference.cache
+/home/sige/test/SMECService TEST/bin/Debug/netcoreapp2.0/SMECService.deps.json
+/home/sige/test/SMECService TEST/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.json
+/home/sige/test/SMECService TEST/bin/Debug/netcoreapp2.0/SMECService.runtimeconfig.dev.json
+/home/sige/test/SMECService TEST/bin/Debug/netcoreapp2.0/SMECService.dll
+/home/sige/test/SMECService TEST/bin/Debug/netcoreapp2.0/SMECService.pdb
+/home/sige/test/SMECService TEST/obj/Debug/netcoreapp2.0/SMECService.csproj.CoreCompileInputs.cache
+/home/sige/test/SMECService TEST/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfoInputs.cache
+/home/sige/test/SMECService TEST/obj/Debug/netcoreapp2.0/SMECService.AssemblyInfo.cs
+/home/sige/test/SMECService TEST/obj/Debug/netcoreapp2.0/SMECService.dll
+/home/sige/test/SMECService TEST/obj/Debug/netcoreapp2.0/SMECService.pdb

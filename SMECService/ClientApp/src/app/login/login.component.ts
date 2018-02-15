@@ -2,8 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-
-import { /*AlertService, /*AuthenticationService*/AuthService } from '../_services/index';
+import { AuthService } from '../services/auth.service';
 
 @Component({
     moduleId: module.id,
@@ -48,7 +47,7 @@ export class LoginComponent {
                     + " TOKEN: "
                     + this.authservice.getAuth()!.token
                 );
-                this.router.navigate(["home"]);
+                this.router.navigate(["focus"]);
             },
             err => {
                 // login failed
@@ -61,7 +60,7 @@ export class LoginComponent {
 
 
     onBack() {
-        this.router.navigate(["home"]);
+        this.router.navigate(["focus"]);
     }
     // retrieve a FormControl
 

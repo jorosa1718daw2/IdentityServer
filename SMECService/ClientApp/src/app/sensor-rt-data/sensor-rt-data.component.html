@@ -7,7 +7,7 @@
   <div *ngIf="currentAnalogData">
     <div class='col-sm-2' style='background-color:LightGreen;color:Black;' align="center" *ngIf="currentAnalogData.samples > 0; else elseBlock">OPERATIVO</div>
     <ng-template #elseBlock>
-      <div class='col-sm-2' style='background-color:FireBrick;color:White;' align="center">FUERA DE SERVIVIO</div>
+      <div class='col-sm-2' style='background-color:FireBrick;color:White;' align="center">FALLO</div>
     </ng-template>
   </div>
 </div>

@@ -4,20 +4,18 @@ import { CurrentAnalogData } from '../models/currentanalogdata.model';
 import { Sensor } from '../models/sensor.model';
 import { CurrentSensorDataService } from '../services/current-sensor-data.service';
 
-
 @Component({
   selector: 'sensor-rt-data',
   templateUrl: './sensor-rt-data.component.html'
 })
 export class SensorRealTimeDataComponent implements OnInit {
   @Input() sensor: Sensor;
-    
+ 
   interval: any;
 
   public currentAnalogData: CurrentAnalogData;
-
-  constructor (private currentSensorDataService: CurrentSensorDataService) {
-    
+  
+  constructor(private currentSensorDataService: CurrentSensorDataService) {
   }
 
   refreshData() {
@@ -35,20 +33,5 @@ export class SensorRealTimeDataComponent implements OnInit {
   ngOnDestroy() {
     clearInterval(this.interval);
   }
-  /*
-  public currentAnalogData: CurrentAnalogData;
-  
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    this.baseUrl = baseUrl;
-    this.http = http;
-  }
-
-  ngOnInit(): void {
-    this.http.get<CurrentAnalogData>(this.baseUrl + 'api/Sensor/' + this.sensor.sensorId + '/CurrentAnalogData').subscribe(result => {
-      this.currentAnalogData = result;
-
-    }, error => console.error(error));*/
-  }
-
-
+}
 

@@ -13,9 +13,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.0.0-rc1-final" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,14 +30,24 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\focus\focus.component.ts" />
-    <None Remove="ClientApp\src\app\rt-data\rt-data.component.ts" />
-    <None Remove="ClientApp\src\app\rt-data\rt-data.service.ts" />
+    <None Remove="ClientApp\src\app\models\analyzer.model.ts" />
+    <None Remove="ClientApp\src\app\models\currentanalogdata.model.ts" />
+    <None Remove="ClientApp\src\app\models\focus.model.ts" />
+    <None Remove="ClientApp\src\app\models\measuringcomponent.model.ts" />
+    <None Remove="ClientApp\src\app\models\sensor.model.ts" />
+    <None Remove="ClientApp\src\app\models\unit.model.ts" />
+    <None Remove="ClientApp\src\app\sensor-rt-data\sensor-rt-data.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\focus\focus.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\rt-data\rt-data.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\rt-data\rt-data.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\analyzer.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\currentanalogdata.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\focus.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\measuringcomponent.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\sensor.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\unit.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\sensor-rt-data\sensor-rt-data.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

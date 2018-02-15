@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SMECService.Models;
 
 namespace SMECService.Data
 {
-    public class CEMSContext : DbContext
+    //public class CEMSContext : DbContext
+    public class CEMSContext : IdentityDbContext<ApplicationUser>
     {
         public CEMSContext(DbContextOptions<CEMSContext> options) : base(options)
         {
@@ -23,6 +25,7 @@ namespace SMECService.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);   
             modelBuilder.Entity<HistoricalAnalogData>()
                 .HasKey(c => new { c.Id, c.TimeStamp });
         }
