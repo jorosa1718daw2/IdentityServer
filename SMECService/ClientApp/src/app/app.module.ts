@@ -11,7 +11,10 @@ import { SensorRealTimeDataComponent } from './sensor-rt-data/sensor-rt-data.com
 import { CurrentSensorDataService } from './services/current-sensor-data.service';
 import { AuthService } from './services/auth.service';
 import { FocusService } from './services/focus.service';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { CalibrationFucntionsComponent } from './calibration-fucntions/calibration-fucntions.component';
+import { AddFocusComponent } from './add-focus/add-focus.component';
+import { FocusAddComponent } from './focus-add/focus-add.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,10 @@ import { LoginComponent } from './login/login.component'
     FetchDataComponent,
     FocusComponent,
     SensorRealTimeDataComponent,
-    LoginComponent
+    LoginComponent,
+    CalibrationFucntionsComponent,
+    AddFocusComponent,
+    FocusAddComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +34,7 @@ import { LoginComponent } from './login/login.component'
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: FetchDataComponent },
+      { path: 'cf', component: CalibrationFucntionsComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'focus', component: FocusComponent },
       { path: 'login', component: LoginComponent },

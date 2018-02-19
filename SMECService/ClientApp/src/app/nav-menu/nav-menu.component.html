@@ -23,6 +23,11 @@
                 <span class='glyphicon glyphicon-th-list'></span> Focos
               </a>
             </li>
+            <li *ngIf="this.auth.isLoggedIn()"  [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/cf"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Fucion Calibración
+              </a>
+            </li>
             <li  *ngIf="!this.auth.isLoggedIn()" [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/login"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-th-list'></span> Login

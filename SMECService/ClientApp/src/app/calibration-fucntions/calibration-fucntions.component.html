@@ -1,0 +1,35 @@
+<h1>Funciones de Calibración</h1>
+
+
+
+<p *ngIf="!cf_list"><em>Cargando...</em></p>
+
+<table class='table' *ngIf="cf_list">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>A</th>
+      <th>B</th>
+      <th>ID Sensor</th>
+      <th>Fecha</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cf of cf_list">
+      <td>{{ cf.calibrationFunctionsId }}</td>
+      <td>{{ cf.a }}</td>
+      <td>{{ cf.b }}</td>
+      <td> {{ cf.sensorId}}</td>
+      <td>{{ cf.date }}</td>
+      <td> <button type="button" class="btn btn-warning">Editar</button>  </td>
+      <td> <button type="button" class="btn btn-danger">Eliminar</button> </td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-info">Añadir</button>

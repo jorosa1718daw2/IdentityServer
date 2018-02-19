@@ -31,8 +31,7 @@ export class AuthService {
                 let token = res && res.token;
                 // if the token is there, login has been successful
                 if (token) {
-                    // store username and jwt token
-                    this.setAuth(res); //¿?
+                    this.setAuth(res);
                     // successful login
                     return true;
                 }

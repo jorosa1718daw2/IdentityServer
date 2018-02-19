@@ -23,6 +23,8 @@ namespace SMECService.Data
         public DbSet<CurrentAnalogData> CurrentAnalogData { get; set; }
         public DbSet<HistoricalAnalogData> HistoricalAnalogData { get; set; }
 
+        public DbSet<CalibrationFunctions> CalibrationFunctions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);   

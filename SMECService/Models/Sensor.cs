@@ -17,6 +17,7 @@ namespace SMECService.Models
         public Analyzer Analyzer { get; set; }
         public MeasuringComponent MeasuringComponent { get; set; }
         public Unit Unit { get; set; }
+         //public ICollection<CalibrationFunctions> CalibrationFunctions { get; set; }
         //public ICollection<HistoricalAnalogData> HistoricalAnalogData { get; set; }
         //public CurrentAnalogData CurrentAnalogData { get; set; }
     }

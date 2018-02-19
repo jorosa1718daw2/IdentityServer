@@ -10,6 +10,8 @@
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Analizador</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,11 @@
       <td>{{ focus.name }}</td>
       <td>{{ focus.description }}</td>
       <td>{{ focus.analyzers[0].manufacturer}} {{focus.analyzers[0].model }}</td>
+      <td> <button type="button" class="btn btn-warning">Editar</button>  </td>
+      <td> <button type="button" class="btn btn-danger">Eliminar</button> </td>
     </tr>
   </tbody>
 </table>
+
+<br>
+<button type="button" class="btn btn-info">Añadir</button>

@@ -67,7 +67,7 @@ namespace SMECService.Controllers
             return new ObjectResult(new { StatusCode = 1 });
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         public IActionResult Create([FromBody] Focus item)
         {
             if (item == null)
