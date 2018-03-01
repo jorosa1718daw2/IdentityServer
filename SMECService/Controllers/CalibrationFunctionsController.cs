@@ -36,11 +36,7 @@ namespace SMECService.Controllers
            return _context.CalibrationFunctions.ToList();
         }
         
-       /* [HttpPost("Create")]
-        public async Task<IActionResult> Create([FromBody]CalibrationFuncionsViewModel model)
-        {
-       
-        }*/
+      
 
 
          }

@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace SMECService.Controllers
 {
     [Route("api/[controller]")]
-    [EnableCors("AllowAllOrigins")]
+   // [EnableCors("AllowAllOrigins")]
     public class FocusController : Controller
     {
         private readonly CEMSContext _context;
@@ -23,7 +23,7 @@ namespace SMECService.Controllers
         {
             _context = context;
         }
-
+        //GET : api/Focus
         [HttpGet]
         public IEnumerable<Focus> GetAll()
         {
@@ -36,7 +36,7 @@ namespace SMECService.Controllers
                          .ThenInclude(s => s.Unit)
                 .ToList();
         }
-
+    //GET : api/Focus/5
         [HttpGet("{id}", Name = "GetFocus")]
         public IActionResult GetById(long id)
         {
@@ -66,7 +66,7 @@ namespace SMECService.Controllers
             }
             return new ObjectResult(new { StatusCode = 1 });
         }
-
+        // POST : api/Focus/Create
         [HttpPost("Create")]
         public IActionResult Create([FromBody] Focus item)
         {
@@ -79,6 +79,45 @@ namespace SMECService.Controllers
             _context.SaveChanges();
 
             return CreatedAtRoute("GetFocus", new { id = item.FocusId }, item);
-        }        
+        }   
+
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var item = _context.Focus.FirstOrDefault(t => t.FocusId == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _context.Focus.Remove(item);
+            _context.SaveChanges();
+            return new NoContentResult();
+
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] Focus item)
+        {
+            if(item == null)
+            {
+                return BadRequest();
+            }
+            var _item = _context.Focus.FirstOrDefault(t => t.FocusId == id);
+            if(_item == null)
+            {
+                return NotFound();
+            }
+            _item.Name = item.Name;
+
+            _context.Focus.Update(_item);
+            _context.SaveChanges();
+            return new NoContentResult();
+        }
+
+       
+
+        }
+     
     }
-}
+

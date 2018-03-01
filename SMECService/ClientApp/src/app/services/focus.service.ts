@@ -4,6 +4,8 @@ import { Focus } from '../models/focus.model';
 import { Observable } from 'rxjs/Observable';
 
 
+
+
 @Injectable()
 export class FocusService {
   baseUrl: string;
@@ -13,6 +15,25 @@ export class FocusService {
   }
 
   getData(): Observable<Focus[]> {
-    return this.http.get<Focus[]>(this.baseUrl + 'api/Focus')
+    return this.http.get<Focus[]>(this.baseUrl + 'api/Focus');
   }
+
+  getFocusById(focusId){
+    return this.http.get(this.baseUrl + 'api/Focus/' + focusId);
+  }
+
+  saveFocus(name){
+    return this.http.post(this.baseUrl + 'api/Focus/Create', name);
+  }
+
+
+
+  UpdateFocus(name) {
+    return this.http.put(this.baseUrl + 'api/Focus/', name);
+  }
+
+  deleteFocus(focusId){
+    return this.http.delete(this.baseUrl + 'api/Focus/' + focusId);
+  }
+
 }

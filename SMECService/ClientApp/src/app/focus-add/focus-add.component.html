@@ -1,3 +1,32 @@
-<p>
-  focus-add works!
-</p>
+<h1>{{title}} Focos de Emisiones</h1>
+<form [formGroup]="focusAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12" for="name">Name</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="name">
+        </div>
+        <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'name') && formDir.submitted">
+            Name is required.
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12" for="description">Description</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="description">
+        </div>
+        <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'description') && formDir.submitted">
+            Description is required.
+        </span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button type="btn" class="cancel()" (click)="cancel()">Cancel</button>
+        <button  [routerLink]="" (click)="delete(focusId)" type="button" class="btn btn-danger">  Eliminar</button>
+       
+    </div>
+</form>
+<br>
+

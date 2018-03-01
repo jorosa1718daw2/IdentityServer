@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 
 @Component({
-  selector: 'app-calibration-fucntions',
-  templateUrl: './calibration-fucntions.component.html',
-  styleUrls: ['./calibration-fucntions.component.css']
+  selector: 'app-calibration-functions',
+  templateUrl: './calibration-functions.component.html',
 })
-export class CalibrationFucntionsComponent{
+export class CalibrationFunctionsComponent{
   public cf_list: CalibrationFunctions[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

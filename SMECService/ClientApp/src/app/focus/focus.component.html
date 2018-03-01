@@ -10,8 +10,10 @@
       <th>Nombre</th>
       <th>Descripción</th>
       <th>Analizador</th>
-      <th>Editar</th>
-      <th>Eliminar</th>
+      <th>Editar Foco</th>
+      <!--<th>Eliminar</th> -->
+      <th>Editar Analizador</th>
+
     </tr>
   </thead>
   <tbody>
@@ -19,11 +21,17 @@
       <td>{{ focus.name }}</td>
       <td>{{ focus.description }}</td>
       <td>{{ focus.analyzers[0].manufacturer}} {{focus.analyzers[0].model }}</td>
-      <td> <button type="button" class="btn btn-warning">Editar</button>  </td>
-      <td> <button type="button" class="btn btn-danger">Eliminar</button> </td>
+      <td> <button [routerLink]="['/focusEdit/', focus.focusId]" type="button" class="btn btn-warning"> Editar Foco</button>  </td>
+      <!--<td> <button [routerLink]="" (click)="delete(focus.focusId)" type="button" class="btn btn-danger">  Eliminar</button> </td>-->
+      <td> <button [routerLink]="['/analyzerEdit/', focus.analyzers[0].analyzerId]" type="button" class="btn btn-warning"> Editar Analizador</button>  </td>
     </tr>
   </tbody>
 </table>
 
 <br>
-<button type="button" class="btn btn-info">Añadir</button>
+<button type="button" class="btn btn-info" [routerLink]='["/focus/add"]'>Añadir Foco</button>
+<br> <br>
+<button type="button" class="btn btn-info" [routerLink]='["/analyzer/add"]'>Añadir Analizador</button>
+
+
+

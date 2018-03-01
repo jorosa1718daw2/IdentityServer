@@ -1,31 +1,50 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FocusService } from '../services/focus.service';
 
 
 @Component({
   selector: 'app-focus',
   templateUrl: './focus.component.html'
 })
-export class FocusComponent {
+export class FocusComponent implements OnInit {
   public focus_list: Focus[];
-  http: HttpClient;
-  @Inject('BASE_URL') baseUrl: string;
+  interval: any;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Focus[]>(baseUrl + 'api/Focus').subscribe(result => {
-      this.focus_list = result;
-    }, error => console.error(error));
+  constructor(public http: HttpClient, private _router: Router, private _focusService: FocusService){
+    this.getFocus();
+  }
+  ngOnInit(): void {
+    this.getFocus();
+    this.interval = setInterval(() => {
+      this.getFocus();
+    }, 5000);
   }
 
-  createFC(focusId){
-    this.http.post(this.baseUrl + 'api/Focus/Create',JSON.stringify(focusId))
+
+  getFocus(){
+    this._focusService.getData().subscribe(
+      data => this.focus_list = data
+    )
   }
 
+  delete(focusId){
+    var ans = confirm("¿ Seguro que quieres elminar este Foco con el ID : " +focusId+ "?");
+    if (ans){
+      this._focusService.deleteFocus(focusId)
+      .subscribe((data)=> {
+        this.getFocus();
+      }, error => console.error(error))
+    }
+  }
 
-}
+  
+  }
+
 
 interface Analyzer {
-  manufacturer: number;
+  manufacturer: string;
   model: string;
   serialNumber: string;
 }

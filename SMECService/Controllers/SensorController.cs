@@ -111,5 +111,18 @@ namespace SMECService.Controllers
 
             return CreatedAtRoute("GetSensor", new { id = item.SensorId }, item);
         }
+          [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var item = _context.Sensors.FirstOrDefault(t => t.SensorId == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _context.Sensors.Remove(item);
+            _context.SaveChanges();
+            return new NoContentResult();
+
+        }
     }
 }

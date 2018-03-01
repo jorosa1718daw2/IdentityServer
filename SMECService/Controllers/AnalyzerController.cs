@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SMECService.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class AnalyzerController : Controller
     {
@@ -77,5 +77,38 @@ namespace SMECService.Controllers
 
             return CreatedAtRoute("GetAnalyzer", new { id = item.AnalyzerId }, item);
         }
+         [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
+        {
+            var item = _context.Analyzers.FirstOrDefault(t => t.AnalyzerId == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            _context.Analyzers.Remove(item);
+            _context.SaveChanges();
+            return new NoContentResult();
+
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] Analyzer item)
+        {
+            if(item == null)
+            {
+                return BadRequest();
+            }
+            var _item = _context.Analyzers.FirstOrDefault(t => t.AnalyzerId == id);
+            if(_item == null)
+            {
+                return NotFound();
+            }
+            _item.Model = item.Model;
+
+            _context.Analyzers.Update(_item);
+            _context.SaveChanges();
+            return new NoContentResult();
+        }
+
     }
 }
