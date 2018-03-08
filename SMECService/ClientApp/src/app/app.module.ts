@@ -13,12 +13,21 @@ import { AnalyzerService } from './services/analyzer.service'
 import { AppComponent } from './app.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { FocusComponent } from './focus/focus.component';
 import { LoginComponent } from './login/login.component';
 import { CalibrationFunctionsComponent } from './calibration-functions/calibration-functions.component';
-import { FocusAddComponent } from './focus-add/focus-add.component';
-import { AnalyzerComponent } from './analyzer/analyzer.component';
 import { SensorRealTimeDataComponent } from './sensor-rt-data/sensor-rt-data.component';
+
+/** focus components */
+import { FocusComponent } from './FocusComponents/focus/focus.component';
+import { FocusAddComponent } from './FocusComponents/focus-add/focus-add.component';
+import { FocusEditComponent } from './FocusComponents/focus-edit/focus-edit.component';
+
+/** analyzer components */
+import { AnalyzerAddComponent } from './AnalyzerComponents/analyzer-add/analyzer-add.component';
+import { AnalyzerEditComponent } from './AnalyzerComponents/analyzer-edit/analyzer-edit.component';
+import { AnalyzerListComponent } from './AnalyzerComponents/analyzer-list/analyzer-list.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +39,10 @@ import { SensorRealTimeDataComponent } from './sensor-rt-data/sensor-rt-data.com
     LoginComponent,
     CalibrationFunctionsComponent,
     FocusAddComponent,
-    AnalyzerComponent,
+    AnalyzerAddComponent,
+    AnalyzerEditComponent,
+    FocusEditComponent,
+    AnalyzerListComponent
     
   ],
   imports: [
@@ -41,19 +53,21 @@ import { SensorRealTimeDataComponent } from './sensor-rt-data/sensor-rt-data.com
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: FetchDataComponent },
+      { path: '', component: FocusComponent },
       { path: 'cf', component: CalibrationFunctionsComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'analyzerEdit/:analyzerId', component: AnalyzerComponent },
-      { path: 'analyzer/add', component: AnalyzerComponent },
+      { path: 'analyzerEdit/:analyzerId', component: AnalyzerEditComponent },
+      { path: 'analyzer/add', component: AnalyzerAddComponent},
       { path: 'focus/add', component: FocusAddComponent },
-      { path: 'focusEdit/:focusId', component: FocusAddComponent },
+      { path: 'focusEdit/:focusId', component: FocusEditComponent },
+      { path: 'focusEdit/:focusId', component: AnalyzerListComponent },
+
       { path: 'focus', component: FocusComponent },
       { path: 'login', component: LoginComponent },
-      { path: '**', component: FetchDataComponent }
+      { path: '**', component: FocusComponent }
     ])
   ],
-  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService],
+  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService, AnalyzerEditComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

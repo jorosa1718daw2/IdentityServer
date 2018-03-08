@@ -12,7 +12,7 @@
       <th>Analizador</th>
       <th>Editar Foco</th>
       <!--<th>Eliminar</th> -->
-      <th>Editar Analizador</th>
+      <!--<th>Editar Analizador</th>-->
 
     </tr>
   </thead>
@@ -23,7 +23,7 @@
       <td>{{ focus.analyzers[0].manufacturer}} {{focus.analyzers[0].model }}</td>
       <td> <button [routerLink]="['/focusEdit/', focus.focusId]" type="button" class="btn btn-warning"> Editar Foco</button>  </td>
       <!--<td> <button [routerLink]="" (click)="delete(focus.focusId)" type="button" class="btn btn-danger">  Eliminar</button> </td>-->
-      <td> <button [routerLink]="['/analyzerEdit/', focus.analyzers[0].analyzerId]" type="button" class="btn btn-warning"> Editar Analizador</button>  </td>
+      <!--<td> <button [routerLink]="['/analyzerEdit/', focus.analyzers[0].analyzerId]" type="button" class="btn btn-warning"> Editar Analizador</button>  </td>-->
     </tr>
   </tbody>
 </table>
@@ -31,7 +31,6 @@
 <br>
 <button type="button" class="btn btn-info" [routerLink]='["/focus/add"]'>Añadir Foco</button>
 <br> <br>
-<button type="button" class="btn btn-info" [routerLink]='["/analyzer/add"]'>Añadir Analizador</button>
 
 
 

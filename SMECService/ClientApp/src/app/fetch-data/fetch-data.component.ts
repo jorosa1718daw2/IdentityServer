@@ -9,7 +9,6 @@ import { FocusService } from '../services/focus.service';
 })
 export class FetchDataComponent {
   public focus_list: Focus[];
-
   constructor(private focusService: FocusService) {
   }
 

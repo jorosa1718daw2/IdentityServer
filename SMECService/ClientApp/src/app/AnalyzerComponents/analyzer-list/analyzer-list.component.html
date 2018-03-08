@@ -1,0 +1,36 @@
+
+<h1>Lista de Analizadores</h1>
+
+
+    <p *ngIf="!focuses">
+        <em>Cargando...</em>
+    </p>
+    <table class='table' *ngIf="focuses">
+        <thead>
+            <tr>
+                <th>Analyzer ID</th>
+                <th>manufacturer</th>
+                <th>foco ID</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let analyzer of focuses.analyzers">
+                  <td>{{ analyzer.analyzerId }}</td>
+                  <td>{{ analyzer.manufacturer }}</td>
+                  <td>{{ analyzer.focusId }}</td>
+                  <td> <button [routerLink]="" (click)="delete(analyzer.analyzerId)" type="button" class="btn btn-danger">  Eliminar</button>
+            </tr>
+        </tbody>
+    </table>
+ 
+ 
+ 
+ 
+
+    
+
+
+
+
+

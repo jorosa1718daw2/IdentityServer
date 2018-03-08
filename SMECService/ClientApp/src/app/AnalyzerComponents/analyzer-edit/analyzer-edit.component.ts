@@ -2,19 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FocusComponent } from '../focus/focus.component';
-import { Analyzer } from '../models/analyzer.model';
-import { AnalyzerService } from '../services/analyzer.service';
+import { FocusComponent } from '../../FocusComponents/focus/focus.component';
+import { Analyzer } from '../../models/analyzer.model';
+import { AnalyzerService } from '../../services/analyzer.service';
 
 @Component({
-  selector: 'app-analyzer',
-  templateUrl: './analyzer.component.html',
-  styleUrls: ['./analyzer.component.css']
+  selector: 'app-analyzer-edit',
+  templateUrl: './analyzer-edit.component.html',
 })
-export class AnalyzerComponent implements OnInit {
+export class AnalyzerEditComponent implements OnInit {
   analyzerAddForm: FormGroup;
   title: string = "Crear";
-  focusId: number;
   analyzerId: number;
   errorMessage: any;
 
@@ -48,7 +46,9 @@ export class AnalyzerComponent implements OnInit {
     if (this.title == "Crear") {
       this._analyzerService.saveAnalyzer(this.analyzerAddForm.value)
         .subscribe((data) => {
-          this._router.navigate(['/focus']);
+          if(this.analyzerAddForm.valid){
+            var ans = confirm("Analizador: " + this.model + "añadido correctamente!");
+          }
         }, error => this.errorMessage = error)
     }
     else if (this.title == "Editar") {

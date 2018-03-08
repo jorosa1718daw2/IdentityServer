@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, Inject, OnInit, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FocusService } from '../services/focus.service';
+import { FocusService } from '../../services/focus.service';
 
 
 @Component({

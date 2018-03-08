@@ -1,0 +1,51 @@
+<h1>{{title}} Analizadores</h1>
+<form [formGroup]="analyzerAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+       
+   
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12" for="focusId">Focus id</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="focusId">
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'focusId') && formDir.submitted">
+            focusId is required.
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <label class=" control-label col-md-12" for="manufacturer">manufacturer</label>
+        <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="manufacturer">
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'manufacturer') && formDir.submitted">
+          manufacturer is required.
+        </span>
+    </div>
+
+    <div class="form-group row">
+      <label class=" control-label col-md-12" for="model">model</label>
+      <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="model">
+      </div>
+      <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'model') && formDir.submitted">
+        model is required.
+      </span>
+  </div>
+  <div class="form-group row">
+    <label class=" control-label col-md-12" for="serialNumber">serialNumber</label>
+    <div class="col-md-4">
+        <input class="form-control" type="text" formControlName="serialNumber">
+    </div>
+    <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'serialNumber') && formDir.submitted">
+      serialNumber is required.
+    </span>
+</div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+    </div>
+</form>
+
+<br>
+

@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Focus } from '../models/focus.model';
 import { Observable } from 'rxjs/Observable';
+import { Analyzer } from '../models/analyzer.model';
 
 
 
@@ -9,17 +10,27 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class FocusService {
   baseUrl: string;
+  analyzers: Analyzer[];
+  focuses: Focus[];
+  focusId: number;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
   }
 
+  random(){
+    var obj = this.analyzers.find((obj) => {
+       return obj.focusId == this.focusId;
+     });
+   }
+
+
   getData(): Observable<Focus[]> {
     return this.http.get<Focus[]>(this.baseUrl + 'api/Focus');
   }
 
-  getFocusById(focusId){
-    return this.http.get(this.baseUrl + 'api/Focus/' + focusId);
+  getFocusById(focusId): Observable<Focus[]>{
+    return this.http.get<Focus[]>(this.baseUrl + 'api/Focus/' + focusId);
   }
 
   saveFocus(name){
