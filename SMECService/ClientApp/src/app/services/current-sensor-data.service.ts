@@ -12,6 +12,18 @@ export class CurrentSensorDataService {
     this.baseUrl = baseUrl;
   }
 
+  getSensors(): Observable<Sensor[]> {
+    return this.http.get<Sensor[]>(this.baseUrl + 'api/Sensor');
+  }
+
+  getSensorsById(sensorId: number): Observable<Sensor[]>{
+    return this.http.get<Sensor[]>(this.baseUrl + 'api/Sensor/' +sensorId);
+  }
+
+  deleteSensor(sensorId: number): Observable<Sensor[]>{
+    return this.http.get<Sensor[]>(this.baseUrl + 'api/Sensor/' +sensorId);
+  }
+
   getData(sensorId: number): Observable<CurrentAnalogData> {
     return this.http.get<CurrentAnalogData>(this.baseUrl + 'api/Sensor/' + sensorId + '/CurrentAnalogData')
   }

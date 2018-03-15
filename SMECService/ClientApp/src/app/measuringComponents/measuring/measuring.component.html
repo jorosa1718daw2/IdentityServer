@@ -1,0 +1,19 @@
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Measuring Component" aria-label="MeasuringComponentModel" [matAutocomplete]="auto" [formControl]="stateCtrl">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let measuring of filteredMeasurings | async" [value]="measuring.name">
+        <span>{{ measuring.name }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <br />
+
+  <!--<mat-slide-toggle
+    [checked]="stateCtrl.disabled"
+    (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
+    Disable Input?
+  </mat-slide-toggle>-->
+
+

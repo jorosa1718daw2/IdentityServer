@@ -33,8 +33,8 @@ export class AnalyzerService {
     return this.http.put(this.baseUrl + 'api/Analyzer/', model);
   }
 
-  deleteAnalyzer(analyzerId){
-    return this.http.delete(this.baseUrl + 'api/Analyzer/' + analyzerId);
+  deleteAnalyzer(analyzerId): Observable<Analyzer[]> {
+    return this.http.delete<Analyzer[]>(this.baseUrl + 'api/Analyzer/' + analyzerId);
   }
 
 

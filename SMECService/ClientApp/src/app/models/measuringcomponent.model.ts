@@ -1,3 +1,3 @@
-export interface MeasuringComponent {
+export interface MeasuringComponentModel {
   name: string;
 }

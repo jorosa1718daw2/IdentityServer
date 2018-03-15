@@ -5,6 +5,9 @@ import { FocusService } from '../../services/focus.service';
 import { PropertyBindingType } from '@angular/compiler';
 import { AnalyzerService } from '../../services/analyzer.service'
 import { AnalyzerEditComponent } from "../analyzer-edit/analyzer-edit.component";
+import { AnalyzerAddComponent } from "../analyzer-add/analyzer-add.component";
+import { Observable } from 'rxjs/Observable';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-analyzer-list',
@@ -19,14 +22,27 @@ export class AnalyzerListComponent implements OnInit {
 
 
 
-  constructor(private analyzerEdit: AnalyzerEditComponent, public http: HttpClient, private _router: Router, private _focusService: FocusService, private route: ActivatedRoute, private _analyzerService: AnalyzerService) {
+  constructor( public dialog: MatDialog, public http: HttpClient, private _router: Router, private _focusService: FocusService, private route: ActivatedRoute, 
+    private _analyzerService: AnalyzerService) {
   }
+  
+
+  openDialog(): void {
+    let dialogRef = this.dialog.open(AnalyzerAddComponent, {
+      width: '500px'
+    });
+  dialogRef.afterClosed().subscribe(result => {
+    this.refreshData();
+  })  
+}
+
+
 
   ngOnInit() {
-    this.refrehData();
+    this.refreshData();
   }
 
-  refrehData(){
+  refreshData(){
     this._focusService.getFocusById(this.focusId)
         .subscribe(data => this.focuses = data )
   }
@@ -39,6 +55,7 @@ export class AnalyzerListComponent implements OnInit {
       }, error => console.error(error))
     }
   }
+
 
 }
 

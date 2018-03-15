@@ -44,7 +44,7 @@ export class FocusAddComponent implements OnInit {
           if(this.focusAddForm.valid){
             var ans = confirm("Foco: " + name + "," + this.focusId+ "añadido correctamente!");
           }
-         // this._router.navigate(['/focus']);
+         this._router.navigate(['/focus']);
         }, error => this.errorMessage = error)
     }
 

@@ -9,19 +9,20 @@ import { FocusService } from '../../services/focus.service';
 
 @Component({
   selector: 'app-focus-edit',
-  templateUrl: './focus-edit.component.html'
+  templateUrl: './focus-edit.component.html',
+  styleUrls: ['./focus-edit.component.css']
 })
 
 export class FocusEditComponent implements OnInit{
   focusAddForm: FormGroup;
   title: string;
- focusId: number;
+  focusId: number;
   errorMessage: any;
   show: boolean = false;
   showA: boolean = false;
   focuses: Focus[];
 
- 
+
 
   constructor(private _fb: FormBuilder, private _avRoute: ActivatedRoute,
     private _focusService: FocusService, private _router: Router) {
@@ -32,7 +33,7 @@ export class FocusEditComponent implements OnInit{
       focusId: 0,
       name: ['', [Validators.required]],
       description: ['', [Validators.required]],
-      //analyzers: ['', [Validators.required]]
+      analyzers: ['']
     })
   }
   
@@ -44,7 +45,6 @@ export class FocusEditComponent implements OnInit{
         .subscribe(resp => this.focusAddForm.setValue(resp),
         error => this.errorMessage = error);
     }
-    
   }
   save() {
     if (this.title == "Editar") {

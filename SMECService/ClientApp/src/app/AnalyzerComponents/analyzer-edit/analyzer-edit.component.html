@@ -1,54 +1,87 @@
-<h1>{{title}} Analizadores</h1>
-<form [formGroup]="analyzerAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
-       
-   
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Editar
+            </mat-panel-title>
+            <mat-panel-description>
+                Editar el analizador actual
+            </mat-panel-description>
+        </mat-expansion-panel-header>
 
-    <div class="form-group row">
-        <label class=" control-label col-md-12" for="focusId">Focus id</label>
-        <div class="col-md-4">
-            <input class="form-control" type="text" formControlName="focusId">
-        </div>
-        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'focusId') && formDir.submitted">
-            focusId is required.
-        </span>
-    </div>
+        <form [formGroup]="analyzerAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+            <div class="form-group row">
+                <!--<label class=" control-label col-md-12" for="focusId">Focus id</label>-->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Foco ID" formControlName="focusId" [ngModel]="focusId">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'focusId') && formDir.submitted">
+                    focusId is required.
+                </span>
+            </div>
 
-    <div class="form-group row">
-        <label class=" control-label col-md-12" for="manufacturer">manufacturer</label>
-        <div class="col-md-4">
-            <input class="form-control" type="text" formControlName="manufacturer">
-        </div>
-        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'manufacturer') && formDir.submitted">
-          manufacturer is required.
-        </span>
-    </div>
+            <div class="form-group row">
+                <!-- <label class=" control-label col-md-12" for="manufacturer">manufacturer</label> -->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Manufacturer" formControlName="manufacturer">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'manufacturer') && formDir.submitted">
+                    manufacturer is required.
+                </span>
+            </div>
 
-    <div class="form-group row">
-      <label class=" control-label col-md-12" for="model">model</label>
-      <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="model">
-      </div>
-      <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'model') && formDir.submitted">
-        model is required.
-      </span>
-  </div>
-  <div class="form-group row">
-    <label class=" control-label col-md-12" for="serialNumber">serialNumber</label>
-    <div class="col-md-4">
-        <input class="form-control" type="text" formControlName="serialNumber">
-    </div>
-    <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'serialNumber') && formDir.submitted">
-      serialNumber is required.
-    </span>
-</div>
+            <div class="form-group row">
+                <!-- <label class=" control-label col-md-12" for="model">model</label>-->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Model" formControlName="model">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'model') && formDir.submitted">
+                    model is required.
+                </span>
+            </div>
+            <div class="form-group row">
+                <!-- <label class=" control-label col-md-12" for="serialNumber">serialNumber</label>-->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Serial Number" formControlName="serialNumber">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'serialNumber') && formDir.submitted">
+                    serialNumber is required.
+                </span>
+            </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-default">Save</button>
-        <button type="btn" class="cancel()" (click)="cancel()">Cancel</button>
-        <button [routerLink]="" (click)="delete(analyzerId)" type="button" class="btn btn-danger">  Eliminar</button>
+            <mat-action-row>
+                <button mat-button color="primary" type="submit">Guardar</button>
+                <button mat-button color="warn" [routerLink]="" (click)="delete(analyzerId)"> Eliminar</button>
+            </mat-action-row>
 
-    </div>
-</form>
+        </form>
+    </mat-expansion-panel>
 
+    <mat-expansion-panel hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Lista de Sensores
+            </mat-panel-title>
+            <mat-panel-description>
+                Ver la lista de Sensores del analizador
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-sensor [analyzerId]="analyzerId"></app-sensor>
+    </mat-expansion-panel>
+</mat-accordion>
+<!--
+<button type="button" class="btn btn-info" [routerLink]='["/analyzer/add"]'>Añadir</button>
 <br>
+<br>
+<button type="btn" class="cancel()" (click)="cancel()">Volver</button>
 
+-->

@@ -38,6 +38,17 @@ namespace SMECService.Controllers
             return new ObjectResult(item);
         }
 
+        [HttpGet("{name}", Name = "Search")]
+        public IActionResult GetByName(string name)
+        {
+            var item = _context.MeasuringComponents.FirstOrDefault(t => t.Name == name);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return new ObjectResult(item);
+        }
+
         [HttpPost]
         public IActionResult Create([FromBody] MeasuringComponent item)
         {

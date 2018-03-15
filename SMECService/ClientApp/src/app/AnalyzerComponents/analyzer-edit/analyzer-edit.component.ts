@@ -12,7 +12,7 @@ import { AnalyzerService } from '../../services/analyzer.service';
 })
 export class AnalyzerEditComponent implements OnInit {
   analyzerAddForm: FormGroup;
-  title: string = "Crear";
+  title: string;
   analyzerId: number;
   errorMessage: any;
 
@@ -22,10 +22,13 @@ export class AnalyzerEditComponent implements OnInit {
       this.analyzerId = this._avRoute.snapshot.params["analyzerId"];
     }
     this.analyzerAddForm = this._fb.group({
+      analyzerId: 0,
       focusId: 0,
       manufacturer: ['', [Validators.required]],
       model: ['', [Validators.required]],
-      serialNumber: ['', [Validators.required]]
+      serialNumber: ['', [Validators.required]],
+      sensors: [''],
+      focus: ['']
     })
   }
 
@@ -33,26 +36,14 @@ export class AnalyzerEditComponent implements OnInit {
 
   ngOnInit() {
     if (this.analyzerId > 0) {
-      this.title = "Editar";
+      this.title == "Editar";
       this._analyzerService.getAnalyzerById(this.analyzerId)
         .subscribe(resp => this.analyzerAddForm.setValue(resp),
         error => this.errorMessage = error);
     }
   }
   save() {
-    if (!this.analyzerAddForm.valid) {
-      return;
-    }
-    if (this.title == "Crear") {
-      this._analyzerService.saveAnalyzer(this.analyzerAddForm.value)
-        .subscribe((data) => {
-          if(this.analyzerAddForm.valid){
-            var ans = confirm("Analizador: " + this.model + "añadido correctamente!");
-          }
-        }, error => this.errorMessage = error)
-    }
-    else if (this.title == "Editar") {
-      
+    if (this.title == "Editar") {
       this._analyzerService.UpdateAnalyzer(this.analyzerAddForm.value)
         .subscribe((data) => {
           this._router.navigate(['/focus']);
@@ -63,13 +54,13 @@ export class AnalyzerEditComponent implements OnInit {
     this._router.navigate(['/focus']);
   }
 
-  delete(analyzerId){
-    var ans = confirm("¿ Seguro que quieres elminar este Analizador con el ID : " +analyzerId+ "?");
-    if (ans){
+  delete(analyzerId) {
+    var ans = confirm("¿ Seguro que quieres elminar este Analizador con el ID : " + analyzerId + "?");
+    if (ans) {
       this._analyzerService.deleteAnalyzer(analyzerId)
-      .subscribe((data)=> {
-        this._router.navigate(['/focus']);
-      }, error => console.error(error))
+        .subscribe((data) => {
+          this._router.navigate(['/focus']);
+        }, error => console.error(error))
     }
   }
   get focus_Id() { return this.analyzerAddForm.get('focusId'); }

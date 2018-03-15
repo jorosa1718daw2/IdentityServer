@@ -43,8 +43,8 @@ export class FocusService {
     return this.http.put(this.baseUrl + 'api/Focus/', name);
   }
 
-  deleteFocus(focusId){
-    return this.http.delete(this.baseUrl + 'api/Focus/' + focusId);
+  deleteFocus(focusId): Observable<Focus[]>{
+    return this.http.delete<Focus[]>(this.baseUrl + 'api/Focus/' + focusId);
   }
 
 }

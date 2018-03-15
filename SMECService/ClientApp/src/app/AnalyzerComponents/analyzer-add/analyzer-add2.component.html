@@ -1,0 +1,53 @@
+<form [formGroup]="analyzerAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+        <!--<label class=" control-label col-md-12" for="focusId">Focus id</label>-->
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Foco ID" formControlName="focusId" [ngModel]="focusId">
+            </mat-form-field>
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'focusId') && formDir.submitted">
+            focusId is required.
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <!-- <label class=" control-label col-md-12" for="manufacturer">manufacturer</label> -->
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Manufacturer" formControlName="manufacturer">
+            </mat-form-field>
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'manufacturer') && formDir.submitted">
+            manufacturer is required.
+        </span>
+    </div>
+
+    <div class="form-group row">
+        <!-- <label class=" control-label col-md-12" for="model">model</label>-->
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Model" formControlName="model">
+            </mat-form-field>
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'model') && formDir.submitted">
+            model is required.
+        </span>
+    </div>
+    <div class="form-group row">
+        <!-- <label class=" control-label col-md-12" for="serialNumber">serialNumber</label>-->
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Serial Number" formControlName="serialNumber">
+            </mat-form-field>
+        </div>
+        <span class="text-danger" *ngIf="analyzerAddForm.hasError('required', 'serialNumber') && formDir.submitted">
+            serialNumber is required.
+        </span>
+    </div>
+    <mat-action-row>
+        <button mat-button color="primary" type="submit">Guardar</button>
+
+    </mat-action-row>
+
+</form>

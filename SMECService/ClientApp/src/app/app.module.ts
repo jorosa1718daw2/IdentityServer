@@ -1,3 +1,4 @@
+
 /** Modules */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { FocusService } from './services/focus.service';
 import { AuthService } from './services/auth.service';
 import { CurrentSensorDataService } from './services/current-sensor-data.service';
 import { AnalyzerService } from './services/analyzer.service'
+import { MeasuringComponentService } from "./services/measuring-component.service";
 /** Components */
 import { AppComponent } from './app.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -24,10 +26,98 @@ import { FocusEditComponent } from './FocusComponents/focus-edit/focus-edit.comp
 
 /** analyzer components */
 import { AnalyzerAddComponent } from './AnalyzerComponents/analyzer-add/analyzer-add.component';
+import { AnalyzerAddComponent2 } from './AnalyzerComponents/analyzer-add/analyzer-add.component';
+
 import { AnalyzerEditComponent } from './AnalyzerComponents/analyzer-edit/analyzer-edit.component';
 import { AnalyzerListComponent } from './AnalyzerComponents/analyzer-list/analyzer-list.component';
+import { snackBarComponent } from "./AnalyzerComponents/analyzer-add/analyzer-add.component";
+/**Sensor Components */
+import { SensorComponent } from './SensorComponent/sensor/sensor.component';
+import { SensorAddComponent } from './SensorComponent/sensor-add/sensor-add.component';
+import { SensorEditComponent } from './SensorComponent/sensor-edit/sensor-edit.component';
 
 
+
+import '../polyfills';
+import {CdkTableModule} from '@angular/cdk/table';
+import {HttpModule} from '@angular/http';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+} from '@angular/material';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  exports: [
+    CdkTableModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+  ]
+})
+export class MaterialModule {}
+
+import { MeasuringComponent } from './measuringComponents/measuring/measuring.component';
 
 @NgModule({
   declarations: [
@@ -40,35 +130,54 @@ import { AnalyzerListComponent } from './AnalyzerComponents/analyzer-list/analyz
     CalibrationFunctionsComponent,
     FocusAddComponent,
     AnalyzerAddComponent,
+    AnalyzerAddComponent2,
     AnalyzerEditComponent,
     FocusEditComponent,
-    AnalyzerListComponent
+    AnalyzerListComponent,
+    SensorComponent,
+    SensorAddComponent,
+    SensorEditComponent,
+    MeasuringComponent
     
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     FormsModule,
-    ReactiveFormsModule,
+    HttpModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,  
     HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
+    MaterialModule,
+    MatNativeDateModule,
+    BrowserAnimationsModule,
+    
     RouterModule.forRoot([
       { path: '', component: FocusComponent },
       { path: 'cf', component: CalibrationFunctionsComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'analyzerEdit/:analyzerId', component: AnalyzerEditComponent },
       { path: 'analyzer/add', component: AnalyzerAddComponent},
+      { path: 'analyzer2/add', component: AnalyzerAddComponent2},
       { path: 'focus/add', component: FocusAddComponent },
       { path: 'focusEdit/:focusId', component: FocusEditComponent },
       { path: 'focusEdit/:focusId', component: AnalyzerListComponent },
+      { path: 'sensorEdit/:sensorId', component:  SensorEditComponent},
+      { path: 'measuring', component: MeasuringComponent },
+     
+
+
 
       { path: 'focus', component: FocusComponent },
       { path: 'login', component: LoginComponent },
       { path: '**', component: FocusComponent }
     ])
   ],
-  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService, AnalyzerEditComponent],
+  entryComponents: [MeasuringComponent],
+  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService, AnalyzerEditComponent, MeasuringComponentService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+
+
+
 

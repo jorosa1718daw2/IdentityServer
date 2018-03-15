@@ -1,48 +1,58 @@
-<h1>{{title}} Focos de Emisiones</h1>
-<form [formGroup]="focusAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Editar
+            </mat-panel-title>
+            <mat-panel-description>
+                Editar el sensor actual
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form [formGroup]="focusAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
 
-    <div class="form-group row">
-        <label class=" control-label col-md-12" for="name">Name</label>
-        <div class="col-md-4">
-            <input class="form-control" type="text" formControlName="name">
-        </div>
-        <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'name') && formDir.submitted">
-            Name is required.
-        </span>
-    </div>
+            <div class="form-group row">
+                <!--<label class=" control-label col-md-12" for="name">Name</label>-->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nombre" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'name') && formDir.submitted">
+                    Name is required.
+                </span>
+            </div>
 
-    <div class="form-group row">
-        <label class=" control-label col-md-12" for="description">Description</label>
-        <div class="col-md-4">
-            <input class="form-control" type="text" formControlName="description">
-        </div>
-        <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'description') && formDir.submitted">
-            Description is required.
-        </span>
-    </div>
+            <div class="form-group row">
+                <!--<label class=" control-label col-md-12" for="description">Description</label>-->
+                <div class="example-form">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nombre" formControlName="description">
+                    </mat-form-field>
+                </div>
+                <span class="text-danger" *ngIf="focusAddForm.hasError('required', 'description') && formDir.submitted">
+                    Description is required.
+                </span>
+            </div>
 
-    <div class="form-group">
-        <button type="submit" class="btn btn-default">Save</button>
-        <button [routerLink]="" (click)="delete(focusId)" type="button" class="btn btn-danger"> Eliminar</button>
+            <mat-action-row>
+                <button mat-button color="primary" type="submit">Guardar</button>
+                <button mat-button color="warn" [routerLink]="" (click)="delete(focusId)"> Eliminar</button>
+            </mat-action-row>
 
-    </div>
-</form>
-<br>
-<br>
-<button (click)="show = !show">{{show ? 'Añadir Analizador': 'Añadir Analizador'}}</button>
-<br>
-<div *ngIf="show">
-    <app-analyzer-add ></app-analyzer-add>
-</div>
+        </form>
+    </mat-expansion-panel>
 
-<br>
-<br>
 
-<button (click)="showA = !showA">{{show ? 'Lista Analizadores': 'Lista Analizadores'}}</button>
-<div *ngIf="showA">
-    <app-analyzer-list [focusId]="focusId"></app-analyzer-list>
-</div>
-<br>
-<br>
-<button type="button" class="btn btn-success" [routerLink]='["/focus"]'>Aceptar</button>
-<button type="btn" class="cancel()" (click)="cancel()">Cancel</button>
+    <mat-expansion-panel hideToggle="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Lista de Analizadores
+            </mat-panel-title>
+            <mat-panel-description>
+                Ver la lista de analizadores del foco
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <app-analyzer-list [focusId]="focusId"></app-analyzer-list>
+    </mat-expansion-panel>
+</mat-accordion>

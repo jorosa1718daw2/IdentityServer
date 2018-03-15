@@ -1,8 +1,10 @@
-import { MeasuringComponent } from './measuringcomponent.model';
+import { MeasuringComponentModel } from './measuringcomponent.model';
 import { Unit } from './unit.model';
 
 export interface Sensor {
   sensorId: number;
-  measuringComponent: MeasuringComponent;
+  analyzerId: number;
+  focusId: number;
+  measuringComponent: MeasuringComponentModel;
   unit: Unit;
 }

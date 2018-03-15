@@ -1,0 +1,43 @@
+
+<h1>Lista de Sensores</h1>
+
+
+<p *ngIf="!analyzers">
+    <em>Cargando...</em>
+</p>
+<table class='table' *ngIf="analyzers">
+    <thead>
+        <tr>
+            <th>SensorID</th>
+            <th>Analyzer ID</th>
+            <th>Measuring Component</th>
+            <th>Unit</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let sensor of analyzers.sensors">
+              <td>{{ sensor.sensorId }}</td>
+              <td>{{ sensor.analyzerId }}</td>
+              <td>{{ sensor.measuringComponent.name }}</td>
+              <td>{{ sensor.unit.name }}</td>
+
+              <td> <button [routerLink]="['/sensorEdit/', sensor.sensorId]" type="button" class="btn btn-warning"> Editar</button>  </td>
+        </tr>
+    </tbody>
+</table>
+<mat-action-row>
+        <button mat-button color="primary" (click)="openDialog()">Añadir</button>
+</mat-action-row>    
+
+
+
+
+
+
+
+
+
+
+

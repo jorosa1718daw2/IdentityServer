@@ -1,0 +1,18 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Editar
+      </mat-panel-title>
+      <mat-panel-description>
+        Editar el sensor actual
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-measuring></app-measuring>
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
