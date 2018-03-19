@@ -20,23 +20,18 @@ export class AnalyzerListComponent implements OnInit {
   errorMessage: any;
   focuses: Focus[];
 
-
-
   constructor( public dialog: MatDialog, public http: HttpClient, private _router: Router, private _focusService: FocusService, private route: ActivatedRoute, 
     private _analyzerService: AnalyzerService) {
   }
   
-
   openDialog(): void {
     let dialogRef = this.dialog.open(AnalyzerAddComponent, {
-      width: '500px'
+      width: '700px'
     });
   dialogRef.afterClosed().subscribe(result => {
     this.refreshData();
   })  
 }
-
-
 
   ngOnInit() {
     this.refreshData();
@@ -46,17 +41,6 @@ export class AnalyzerListComponent implements OnInit {
     this._focusService.getFocusById(this.focusId)
         .subscribe(data => this.focuses = data )
   }
-
-  delete(analyzerId){
-    var ans = confirm("¿ Seguro que quieres elminar este Analizador con el ID : " +analyzerId+ "?");
-    if (ans){
-      this._analyzerService.deleteAnalyzer(analyzerId)
-      .subscribe((data)=> {
-      }, error => console.error(error))
-    }
-  }
-
-
 }
 
 interface Focus {

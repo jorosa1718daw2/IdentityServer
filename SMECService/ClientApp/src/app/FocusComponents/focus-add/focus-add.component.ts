@@ -14,7 +14,7 @@ import { FocusService } from '../../services/focus.service';
 })
 export class FocusAddComponent implements OnInit {
   focusAddForm: FormGroup;
-  title: string = "Crear"
+  title: string = "Añadir"
   focusId: number;
   errorMessage: any;
   show: boolean = false;
@@ -38,7 +38,7 @@ export class FocusAddComponent implements OnInit {
     if (!this.focusAddForm.valid) {
       return;
     }
-    if (this.title == "Crear") {
+    if (this.title == "Añadir") {
       this._focusService.saveFocus(this.focusAddForm.value)
         .subscribe((data) => {
           if(this.focusAddForm.valid){

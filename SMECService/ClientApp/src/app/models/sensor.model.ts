@@ -5,6 +5,8 @@ export interface Sensor {
   sensorId: number;
   analyzerId: number;
   focusId: number;
+  measuringComponentId: number;
+  unitId: number;
   measuringComponent: MeasuringComponentModel;
   unit: Unit;
 }

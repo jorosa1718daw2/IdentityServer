@@ -1,7 +1,8 @@
-import { Component, Inject, OnInit, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
+import { Component, Inject, OnInit, CUSTOM_ELEMENTS_SCHEMA, Input, EventEmitter, ChangeDetectionStrategy  } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FocusService } from '../../services/focus.service';
+import { Output } from '@angular/core/src/metadata/directives';
 
 
 @Component({
@@ -9,38 +10,29 @@ import { FocusService } from '../../services/focus.service';
   templateUrl: './focus.component.html'
 })
 export class FocusComponent implements OnInit {
+
   public focus_list: Focus[];
   interval: any;
 
-  constructor(public http: HttpClient, private _router: Router, private _focusService: FocusService){
+  constructor(public http: HttpClient, private _router: Router, private _focusService: FocusService) {
     this.getFocus();
   }
   ngOnInit(): void {
-    this.getFocus();
+   this.getFocus();
     this.interval = setInterval(() => {
       this.getFocus();
     }, 5000);
   }
 
 
-  getFocus(){
+
+  getFocus() {
     this._focusService.getData().subscribe(
       data => this.focus_list = data
     )
   }
 
-  delete(focusId){
-    var ans = confirm("¿ Seguro que quieres elminar este Foco con el ID : " +focusId+ "?");
-    if (ans){
-      this._focusService.deleteFocus(focusId)
-      .subscribe((data)=> {
-        this.getFocus();
-      }, error => console.error(error))
-    }
-  }
-
-  
-  }
+}
 
 
 interface Analyzer {

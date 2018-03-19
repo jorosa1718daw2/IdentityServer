@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Focus } from '../models/focus.model';
 import { Observable } from 'rxjs/Observable';
 import { Analyzer } from '../models/analyzer.model';
+import { BehaviorSubject} from 'rxjs/Rx';
 
 
 
@@ -11,23 +12,19 @@ import { Analyzer } from '../models/analyzer.model';
 export class FocusService {
   baseUrl: string;
   analyzers: Analyzer[];
-  focuses: Focus[];
   focusId: number;
+
+  private focuses: Focus[];
+  private focusesSubject = new BehaviorSubject([]);
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
   }
 
-  random(){
-    var obj = this.analyzers.find((obj) => {
-       return obj.focusId == this.focusId;
-     });
-   }
-
-
   getData(): Observable<Focus[]> {
-    return this.http.get<Focus[]>(this.baseUrl + 'api/Focus');
+   return this.http.get<Focus[]>(this.baseUrl + 'api/Focus');
   }
+
 
   getFocusById(focusId): Observable<Focus[]>{
     return this.http.get<Focus[]>(this.baseUrl + 'api/Focus/' + focusId);

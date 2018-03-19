@@ -1,3 +1,47 @@
-<p>
-  sensor-add works!
-</p>
+<h1 mat-dialog-title>{{title}} Sensor</h1>
+<div mat-dialog-content>
+  <form [formGroup]="sensorAddForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+      <!--<label class=" control-label col-md-12" for="analyzerId"></label>-->
+      <div class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="analyzerId" formControlName="analyzerId">
+        </mat-form-field>
+      </div>
+      <span class="text-danger" *ngIf="sensorAddForm.hasError('required', 'analyzerId') && formDir.submitted">
+        sensorId is required.
+      </span>
+    </div>
+
+    <div class="form-group row">
+     
+        
+        <app-measuring ></app-measuring>
+
+      <span class="text-danger" *ngIf="sensorAddForm.hasError('required', 'measuringComponentId') && formDir.submitted">
+          measuringComponentId is required.
+      </span>
+    </div>
+    <div class="form-group row">
+      
+
+        <app-unit ></app-unit>
+
+
+      <span class="text-danger" *ngIf="sensorAddForm.hasError('required', 'unitId') && formDir.submitted">
+        unitId is required.
+      </span>
+    </div>
+
+
+    <div mat-dialog-actions>
+      <button mat-button type="submit">Guardar</button>
+      <button mat-button (click)="onNoClick()">Cerrar</button>
+    </div>
+  </form>
+
+
+
+
+</div>
+<!-- matDialog -->

@@ -6,10 +6,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MeasuringComponentService } from "../../services/measuring-component.service";
 import { MeasuringComponentModel } from "../../models/measuringcomponent.model";
 
-
 import { Observable } from 'rxjs/Observable';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {ReactiveFormsModule, FormControl, FormsModule} from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, Validators, FormControl,ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {startWith} from 'rxjs/operators/startWith';
 import {map} from 'rxjs/operators/map';
 
@@ -24,9 +23,16 @@ export class MeasuringComponent implements OnInit{
   stateCtrl: FormControl;
   filteredMeasurings: Observable<any[]>;
   measurings: MeasuringComponentModel[];
+  @Input() sensorAddForm: FormGroup;
 
-  constructor(public http: HttpClient, private _router: Router, private _measuringService: MeasuringComponentService) {
+  constructor(private _fb: FormBuilder, public http: HttpClient, private _router: Router, private _measuringService: MeasuringComponentService) {
     this.stateCtrl = new FormControl();
+    this.sensorAddForm = this._fb.group({
+      analyzerId: 0,
+      measuringComponentId: ['', [Validators.required]],
+      unitId: ['', [Validators.required]]
+    })
+   
     
      
   }
@@ -53,5 +59,7 @@ export class MeasuringComponent implements OnInit{
       measuring.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
 
   }
+
+
 
 }

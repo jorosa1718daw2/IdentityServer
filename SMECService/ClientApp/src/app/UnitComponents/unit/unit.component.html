@@ -1,0 +1,10 @@
+<div class="example-form">
+    <mat-form-field class="example-full-width" [formGroup]="sensorAddForm">
+      <input formControlName="unitId" matInput placeholder="Unit Component" aria-label="Unit" [matAutocomplete]="auto" [formControl]="unitCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let unit of filteredUnits | async" [value]="unit.name">
+          <span>{{ unit.name }}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>

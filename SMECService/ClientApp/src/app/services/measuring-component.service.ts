@@ -18,9 +18,9 @@ export class MeasuringComponentService {
     return this.http.get<MeasuringComponentModel[]>(this.baseUrl + 'api/measuringcomponent');
   }
 
- /* getAnalyzerById(): Observable<MeasuringComponent[]>{
-    return this.http.get<MeasuringComponent[]>(this.baseUrl + 'api/measuringcompomemt/' + ?);
-  }*/
+  saveMeasruing(name){
+    return this.http.post(this.baseUrl + 'api/measuringcomponent', name);
+  }
 
 
 

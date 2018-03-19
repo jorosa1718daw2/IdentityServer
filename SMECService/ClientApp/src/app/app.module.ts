@@ -11,6 +11,7 @@ import { AuthService } from './services/auth.service';
 import { CurrentSensorDataService } from './services/current-sensor-data.service';
 import { AnalyzerService } from './services/analyzer.service'
 import { MeasuringComponentService } from "./services/measuring-component.service";
+import { UnitComponentService } from "./services/unit.service";
 /** Components */
 import { AppComponent } from './app.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
@@ -26,7 +27,6 @@ import { FocusEditComponent } from './FocusComponents/focus-edit/focus-edit.comp
 
 /** analyzer components */
 import { AnalyzerAddComponent } from './AnalyzerComponents/analyzer-add/analyzer-add.component';
-import { AnalyzerAddComponent2 } from './AnalyzerComponents/analyzer-add/analyzer-add.component';
 
 import { AnalyzerEditComponent } from './AnalyzerComponents/analyzer-edit/analyzer-edit.component';
 import { AnalyzerListComponent } from './AnalyzerComponents/analyzer-list/analyzer-list.component';
@@ -118,6 +118,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 export class MaterialModule {}
 
 import { MeasuringComponent } from './measuringComponents/measuring/measuring.component';
+import { UnitComponent } from "./UnitComponents/unit/unit.component";
 
 @NgModule({
   declarations: [
@@ -130,14 +131,14 @@ import { MeasuringComponent } from './measuringComponents/measuring/measuring.co
     CalibrationFunctionsComponent,
     FocusAddComponent,
     AnalyzerAddComponent,
-    AnalyzerAddComponent2,
     AnalyzerEditComponent,
     FocusEditComponent,
     AnalyzerListComponent,
     SensorComponent,
     SensorAddComponent,
     SensorEditComponent,
-    MeasuringComponent
+    MeasuringComponent,
+    UnitComponent
     
   ],
   imports: [
@@ -157,23 +158,18 @@ import { MeasuringComponent } from './measuringComponents/measuring/measuring.co
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'analyzerEdit/:analyzerId', component: AnalyzerEditComponent },
       { path: 'analyzer/add', component: AnalyzerAddComponent},
-      { path: 'analyzer2/add', component: AnalyzerAddComponent2},
       { path: 'focus/add', component: FocusAddComponent },
       { path: 'focusEdit/:focusId', component: FocusEditComponent },
       { path: 'focusEdit/:focusId', component: AnalyzerListComponent },
       { path: 'sensorEdit/:sensorId', component:  SensorEditComponent},
       { path: 'measuring', component: MeasuringComponent },
-     
-
-
-
       { path: 'focus', component: FocusComponent },
       { path: 'login', component: LoginComponent },
       { path: '**', component: FocusComponent }
     ])
   ],
-  entryComponents: [MeasuringComponent],
-  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService, AnalyzerEditComponent, MeasuringComponentService],
+  entryComponents: [MeasuringComponent, SensorAddComponent],
+  providers: [CurrentSensorDataService, FocusService, AuthService, AnalyzerService, AnalyzerEditComponent, MeasuringComponentService, UnitComponentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
